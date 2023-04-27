@@ -1,0 +1,7 @@
+<view class="page" data-weui-theme="{{theme}}">
+  <view class="index">
+    <view class="index-hd">
+      
+    </view>
+  </view>
+</view>

@@ -1,0 +1,16 @@
+@import "../common/index.wxss";
+
+.carousel{
+  width: 55rem;
+}
+.btn button{
+  display: inline;
+  top:2rem;
+  left: 3rem;
+}
+
+.poster{
+  height: 5rem;
+  left: 5rem;
+
+}

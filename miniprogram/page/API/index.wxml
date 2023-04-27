@@ -1,0 +1,6 @@
+<set-tab-bar wx:if="{{isSetTabBarPage}}" bindunmount="leaveSetTabBarPage"></set-tab-bar>
+<view wx:else class="index page" data-weui-theme="{{theme}}">
+  <view class="index-hd">
+    
+  </view>
+</view>

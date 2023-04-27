@@ -1,0 +1,21 @@
+<view class="page" data-weui-theme="{{theme}}">
+  <view class="index">
+    <view class="carousel">
+  <!--轮播图-->
+     <swiper indicator-dots='true' autoplay='true' interval='5000'  duration='1000' circular='true'>
+       <block wx:for="{{movies}}" wx:for-index="index">
+         <swiper-item>
+           <image src='{{item.url}}' mode='aspectFill'></image>
+         </swiper-item>
+       </block>
+     </swiper>
+  </view>
+  <view class="btn">
+  <button type="primary">创建病例</button>
+  <button type="primary">记录健康数据</button>
+  </view>
+  <view class="banner">
+  <image class="poster" src="../../image/banner.png" mode=""/>
+  </view>
+  </view>
+</view>

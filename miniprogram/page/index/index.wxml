@@ -27,4 +27,7 @@
   <image class="poster" src="../../image/banner.png" mode=""/>
   </view>
   </view>
+  <view>
+    <calendar />
+  </view>
 </view>

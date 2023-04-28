@@ -1,6 +1,6 @@
 {
   "pages": [
-    "page/component/index",
+    "page/index/index",
     "page/API/index",
     "page/cloud/index",
     "page/extend/index"
@@ -18,7 +18,7 @@
     "backgroundColor": "@tabBarBackgroundColor",
     "list": [
       {
-        "pagePath": "page/component/index",
+        "pagePath": "page/index/index",
         "iconPath": "@iconPathComponent",
         "selectedIconPath": "@selectedIconPathComponent",
         "text": "首页"

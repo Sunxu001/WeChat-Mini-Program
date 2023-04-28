@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "我的病历本",
+    "usingComponents": {
+      "calendar":"../component/calendar"
+    }
+}

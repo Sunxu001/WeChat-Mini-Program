@@ -1,0 +1,46 @@
+/* page/记录健康数据/index.wxss */ 
+@import "../common/index.wxss"; 
+/* 背景颜色 */ 
+.record-bak{ 
+  background: linear-gradient(180deg, rgba(0, 117, 255, 0.2) 0%, rgba(0, 117, 255, 0) 100%), #FFFFFF; 
+} 
+/* 头部文本 */ 
+.txt{ 
+  margin-top: 2rem; 
+  margin-left: 2rem; 
+  margin-bottom: 1rem; 
+} 
+/* 健康数据按钮 */ 
+.record-btn button{ 
+  width: 90%; 
+  height: 6rem; 
+  border-radius: 15px; 
+} 
+.record-btn image{ 
+  float: left; 
+  line-height: 6rem; 
+  padding-top: 0.5rem; 
+  width: 4rem; 
+  height: auto; 
+} 
+.record-btn text{ 
+  line-height: 5rem; 
+  right: 1rem; 
+  text-align: center; 
+  font-size: x-large; 
+} 
+.record-btn button:nth-child(1){ 
+  background: rgba(33, 175, 255, 0.34); 
+} 
+.record-btn button:nth-child(2){ 
+  background: rgba(255, 136, 179, 0.7); 
+} 
+.record-btn button:nth-child(3){ 
+  background: rgba(255, 191, 132, 0.86); 
+} 
+.record-btn button:nth-child(4){ 
+  background: rgba(253, 209, 53, 0.78); 
+} 
+.record-btn button:nth-child(5){ 
+  background: rgba(82, 204, 197, 0.67); 
+}

@@ -3,11 +3,11 @@
    <!--轮播图-->
     <view class="carousel">
      <swiper indicator-dots='true' autoplay='true' interval='5000'  duration='1000' circular='true'>
-       <block wx:for="{{movies}}" wx:for-index="index">
+       <view wx:for="{{movies}}" wx:key="index">
          <swiper-item>
            <image class="item" src='{{item.url}}' mode='widthFix'></image>
          </swiper-item>
-       </block>
+       </view>
      </swiper>
   </view>
    <!--按钮-->
@@ -26,8 +26,12 @@
   <view class="banner">
   <image class="poster" src="../../image/banner.png" mode=""/>
   </view>
-  </view>
-  <view>
+  <view class="calendar">
+  <view class="calendar__title">就诊病例</view>
+  <text class="calendar__text">记录每一次就诊时间，帮助你快速回顾身体状况！</text>
+  <view class="calendar__section">
     <calendar />
   </view>
+  </view>
+</view>
 </view>

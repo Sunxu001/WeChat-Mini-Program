@@ -1,4 +1,4 @@
-function formatTime(time) {
+export function formatTime(time) {
   if (typeof time !== 'number' || time < 0) {
     return time
   }
@@ -15,7 +15,7 @@ function formatTime(time) {
   }).join(':')
 }
 
-function formatLocation(longitude, latitude) {
+export function formatLocation(longitude, latitude) {
   if (typeof longitude === 'string' && typeof latitude === 'string') {
     longitude = parseFloat(longitude)
     latitude = parseFloat(latitude)
@@ -30,19 +30,19 @@ function formatLocation(longitude, latitude) {
   }
 }
 
-function fib(n) {
+export function fib(n) {
   if (n < 1) return 0
   if (n <= 2) return 1
   return fib(n - 1) + fib(n - 2)
 }
 
-function formatLeadingZeroNumber(n, digitNum = 2) {
+export function formatLeadingZeroNumber(n, digitNum = 2) {
   n = n.toString()
   const needNum = Math.max(digitNum - n.length, 0)
   return new Array(needNum).fill(0).join('') + n
 }
 
-function formatDateTime(date, withMs = false) {
+export function formatDateTime(date, withMs = false) {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
   const day = date.getDate()
@@ -59,7 +59,7 @@ function formatDateTime(date, withMs = false) {
   return ret
 }
 
-function compareVersion(v1, v2) {
+export function compareVersion(v1, v2) {
   v1 = v1.split('.')
   v2 = v2.split('.')
   const len = Math.max(v1.length, v2.length)
@@ -85,10 +85,17 @@ function compareVersion(v1, v2) {
   return 0
 }
 
-module.exports = {
-  formatTime,
-  formatLocation,
-  fib,
-  formatDateTime,
-  compareVersion
+export function dateFormat(date) {
+  let year = date.getFullYear();
+  let month = date.getMonth() + 1;
+  let day = date.getDate();
+  return {
+    year,
+    month,
+    day
+  }
+}
+
+export function getDate(year,month,day){
+  return new Date(year,month,day)
 }

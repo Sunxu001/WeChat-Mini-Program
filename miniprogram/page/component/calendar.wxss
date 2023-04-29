@@ -1,1 +1,57 @@
-/* miniprogram_npm/component/calendar.wxml.wxss */
+.calendar {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 30rpx;
+  border-radius: 15rpx;
+  margin-top: 20rpx;
+}
+
+.calendar__head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar__box{
+  width: 80rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar__title{
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #939393;
+}
+
+.calendar__title view{
+  width: 100%;
+  text-align: center;
+}
+
+.calendar__date {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.calendar__cloumn{
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.calendar__item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.notCurrentMonth{
+  color: #939393;
+}

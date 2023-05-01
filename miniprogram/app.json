@@ -3,7 +3,9 @@
     "page/index/index",
     "page/API/index",
     "page/cloud/index",
-    "page/extend/index"
+    "page/extend/index",
+    "page/addCaseHistory/addCaseHistory",
+    "page/caseHistoryType/caseHistoryType"
   ],
   "window": {
     "navigationBarTextStyle": "@navigationBarTextStyle",
@@ -66,7 +68,12 @@
     "weui": true
   },
   "frameset": true,
-  "requiredBackgroundModes": ["audio", "location"],
-  "embeddedAppIdList": ["wxfdcee92a299bcaf1"],
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ],
+  "embeddedAppIdList": [
+    "wxfdcee92a299bcaf1"
+  ],
   "lazyCodeLoading": "requiredComponents"
 }

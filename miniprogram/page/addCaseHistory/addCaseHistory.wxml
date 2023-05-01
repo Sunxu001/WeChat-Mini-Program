@@ -1,0 +1,23 @@
+<view class="section">
+  <view class="section__form">
+    <view class="section__form__input">
+      <input type="text" class="input__item" placeholder="就诊时间" />
+      <input type="text" class="input__item" placeholder="患者姓名" />
+      <input type="text" class="input__item" placeholder="就诊医院" />
+      <input type="text" class="input__item" placeholder="病因" />
+    </view>
+    <view class="section__upload">
+      <text class="section__title">附件（病历照片）：</text>
+      <view class="section__upload__box">
+        点击上传
+      </view>
+    </view>
+    <view class="section__upload">
+      <text class="section__title">其他信息：</text>
+      <textarea cols="7" rows="2" class="textarea__item" placeholder="其他信息" />
+    </view>
+    <view class="section__button__box">
+      <button class="section__button" style="width: 100%;">保存</button>
+    </view>
+  </view>
+</view>

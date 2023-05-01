@@ -1,0 +1,43 @@
+<view class="section">
+  <view class="section__head">
+    <text>心率</text>
+    <button class="add__button" style="width: 240rpx;" bindtap="handleAdd">添加数据</button>
+  </view>
+  <view class="section__date">
+    <view class="date__tags">
+      <view style="border: none;">
+        日
+      </view>
+      <view>
+        周
+      </view>
+      <view>
+        月
+      </view>
+      <view>
+        年
+      </view>
+    </view>
+    <view class="form__data">
+      <view style="margin-top: 10rpx;">
+        <text>本次数据范围</text>
+        <view>
+          <text style="font-size: 50rpx;">83-86</text>
+          <text>次/分</text>
+        </view>
+        <text style="font-size: 30rpx;">4月18日</text>
+      </view>
+      <view style="margin-top: 10rpx;">
+        <text style="font-size: 50rpx;">低压120</text>
+      </view>
+    </view>
+  <view class="section__chats">
+
+  </view>
+  </view>
+  <view class="section__text">
+    <view style="font-size: 34rpx;">温馨提示</view>
+    如果如果如果如果如果如果如果如果如果如果如果如果如果如果如果如果如果如果如果
+  </view>
+<popup-model wx:if="{{dateItem}}" bind:close="close"></popup-model>
+</view>

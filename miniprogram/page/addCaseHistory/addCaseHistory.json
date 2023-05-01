@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText":"我的病历",
+  "usingComponents": {
+    "form-input":"../component/formInput"
+  }
+}

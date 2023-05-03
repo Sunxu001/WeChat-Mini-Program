@@ -13,9 +13,12 @@ Page({
     ],
   },
   handleToAdd: function () {
-    console.log(111);
     wx.navigateTo({
       url: '/page/addCaseHistory/addCaseHistory'
+    })
+  },handleToData:function(){
+    wx.navigateTo({
+      url: '/page/DataBtn/index'
     })
   }
 })

@@ -18,7 +18,7 @@
     <image  class="creat-icon" src="../../image/icon-create.png" mode=""/>
   </button>
   <!--按钮-记录健康数据-->
-  <button  class="record-btn" >
+  <button  class="record-btn" bindtap="handleToData">
     <text class="record-text">记录健康数据</text>
     <image class="record-icon" src="../../image/icon-record.png" alt=""/></button>
   </view>

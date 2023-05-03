@@ -32,7 +32,7 @@
       </view>
     </view>
   <view class="section__chats">
-
+    <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas"></canvas>
   </view>
   </view>
   <view class="section__text">

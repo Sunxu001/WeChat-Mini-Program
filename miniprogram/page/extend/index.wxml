@@ -1,9 +1,0 @@
-<view class="page" data-weui-theme="{{theme}}">
-    <!-- <view class="page__hd page-weui-large">
-      <view class="page__title__large">扩展能力</view>
-      <view class="page__desc">扩展组件是对小程序内置组件能力的补充，包括一些常见的功能组件。</view>
-    </view> -->
-     <view class="index-hd">
-   
-    </view>
-</view>

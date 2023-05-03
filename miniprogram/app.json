@@ -5,7 +5,6 @@
     "page/PersonalInfo/index",
     "page/index/index",
     "page/cloud/index",
-    "page/extend/index",
     "page/addCaseHistory/addCaseHistory",
     "page/caseHistoryType/caseHistoryType"
   ],
@@ -28,7 +27,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "page/extend/index",
+        "pagePath": "page/addCaseHistory/addCaseHistory",
         "iconPath": "@iconPathComponent",
         "selectedIconPath": "@selectedIconPathComponent",
         "text": "病历档案"

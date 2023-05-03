@@ -9,19 +9,19 @@
   <!--信息栏-->
 <view class="user-info">
 <button>
-<image src="../../image/icon-Personal Info.png" mode="widthFix"/>
-<text>个人信息</text>
-<image src="../../image/arrow.png" mode="widthFix"/>
+<image class="btn-icon" src="../../image/icon-Personal Info.png" mode="widthFix"/>
+<text class="wtxt">个人信息</text>
+<image class="arrow-btn" src="../../image/arrow.png" mode="widthFix"/>
 </button>
 <button>
-<image src="../../image/icon-use.png" mode="widthFix"/>
-<text>使用说明</text>
-<image src="../../image/arrow.png" mode="widthFix"/>
+<image  class="btn-icon"  src="../../image/icon-use.png" mode="widthFix"/>
+<text class="wtxt" >使用说明</text>
+<image class="arrow-btn" src="../../image/arrow.png" mode="widthFix"/>
 </button>
 <button>
-<image src="../../image/icon-Qfeedback.png" mode="widthFix"/>
-<text>问题反馈</text>
-<image src="../../image/arrow.png" mode="widthFix"/>
+<image  class="btn-icon"  src="../../image/icon-Qfeedback.png" mode="widthFix"/>
+<text class="wtxt">问题反馈</text>
+<image class="arrow-btn" src="../../image/arrow.png" mode="widthFix"/>
 </button>
 </view>
   </view>

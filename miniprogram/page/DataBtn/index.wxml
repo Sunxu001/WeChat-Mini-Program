@@ -1,0 +1,37 @@
+<!--page/记录健康数据/index.wxml--> 
+ 
+<view class="record-bak">  
+<!--文本--> 
+<view class="txt"> 
+<rich-text nodes="<h1>Hi~</h1>"/> 
+<rich-text nodes="<h3>快来记录下你的健康数据吧！</h3>"/> 
+</view> 
+<!--按钮--> 
+<view class="record-btn"> 
+<button> 
+<image src="../../image/icon-heartPulse.png" mode="widthFix"/> 
+<text>心率</text> 
+</button> 
+ 
+<button> 
+<image src="../../image/icon-pressure.png" mode="widthFix"/> 
+<text>血压</text> 
+</button> 
+ 
+<button> 
+<image src="../../image/icon-sugar.png" mode="widthFix"/> 
+<text>血糖</text> 
+</button> 
+ 
+<button> 
+<image src="../../image/icon-fat.png" mode="widthFix"/> 
+<text>胆固醇（血脂）</text> 
+</button> 
+ 
+<button> 
+<image src="../../image/icon-weight.png" mode="widthFix"/> 
+<text>体重</text> 
+</button> 
+</view> 
+ 
+</view> 

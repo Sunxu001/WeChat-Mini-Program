@@ -1,0 +1,46 @@
+<view class="section">
+  <view class="section__head">
+    <button hidden="{{select}}" bindtap="handleEdit">管理</button>
+    <button hidden="{{!select}}" bindtap="handleCancel">取消</button>
+    <button bindtap="handleDelete">删除</button>
+  </view>
+  <view wx:if="{{list.length}}">
+    <view class="section__item" wx:for="{{list}}" wx:key="index">
+      <view class="date__title">
+        <text>{{item.date}}</text>
+      </view>
+      <view style="display: flex;align-items: center;justify-content: space-between;">
+        <view>
+
+          <view class="info">
+            患者：{{item.name}}
+          </view>
+          <view class="info">
+            医院：{{item.hospital}}
+          </view>
+          <view class="info">
+            病因：{{item.pathogeny}}
+          </view>
+          <view class="info">
+            其他信息：{{item.other}}
+          </view>
+          <view class="info img" wx:if="{{item.imgUrl.length}}">
+            附件（病历照片）：
+            <view class="section__image">
+              <view wx:for="{{item.imgUrl}}" wx:for-item="img" wx:for-index="i" wx:key="i">
+                <image src="{{img}}" />
+              </view>
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{select}}" class="section__select" bindtap="handleSelect" data-item="{{item}}">
+          <text wx:if="{{item.select}}">已选择</text>
+          <text wx:else>未选择</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    暂无数据
+  </view>
+</view>

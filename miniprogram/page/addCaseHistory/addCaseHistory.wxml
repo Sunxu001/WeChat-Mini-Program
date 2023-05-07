@@ -1,23 +1,33 @@
-<view class="section">
+<form class="section" bindsubmit="handleSubmit">
   <view class="section__form">
     <view class="section__form__input">
-      <input type="text" class="input__item" placeholder="就诊时间" />
-      <input type="text" class="input__item" placeholder="患者姓名" />
-      <input type="text" class="input__item" placeholder="就诊医院" />
-      <input type="text" class="input__item" placeholder="病因" />
+      <picker mode="date" name="date" value="{{date}}" class="input__item" header-text="就诊时间" bindchange="bindDateChange">
+        <view class="picker">
+          就诊时间: {{date}}
+          <text wx:if="{{date}}" style="float: right;" catchtap="handleDeleteDate">x</text>
+        </view>
+      </picker>
+      <input type="text" name="name" class="input__item" placeholder="患者姓名" />
+      <input type="text" name="hospital" class="input__item" placeholder="就诊医院" />
+      <input type="text" name="pathogeny" class="input__item" placeholder="病因" />
     </view>
     <view class="section__upload">
       <text class="section__title">附件（病历照片）：</text>
-      <view class="section__upload__box">
-        点击上传
+      <view class="section__upload__box" bindtap="handleUpload">
+        点我上传
+      </view>
+      <view class="section__image">
+        <view wx:for="{{imgUrl}}" wx:key="index">
+          <image src="{{item}}" />
+        </view>
       </view>
     </view>
     <view class="section__upload">
       <text class="section__title">其他信息：</text>
-      <textarea cols="7" rows="2" class="textarea__item" placeholder="其他信息" />
+      <textarea name='other' cols="7" rows="2" class="textarea__item" placeholder="其他信息" />
     </view>
     <view class="section__button__box">
-      <button class="section__button" style="width: 100%;">保存</button>
+      <button class="section__button" style="width: 100%;" form-type="submit">保存</button>
     </view>
   </view>
-</view>
+</form>

@@ -22,7 +22,7 @@
       <view style="margin-top: 10rpx;">
         <text>本次数据范围</text>
         <view>
-          <text style="font-size: 50rpx;">83-86</text>
+          <text style="font-size: 50rpx;">86</text>
           <text>次/分</text>
         </view>
         <text style="font-size: 30rpx;">4月18日</text>

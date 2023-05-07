@@ -6,7 +6,8 @@
     "page/index/index",
     "page/cloud/index",
     "page/addCaseHistory/addCaseHistory",
-    "page/caseHistoryType/caseHistoryType"
+    "page/caseHistoryType/caseHistoryType",
+    "page/caseHistory/caseHistory"
   ],
   "window": {
     "navigationBarTextStyle": "@navigationBarTextStyle",
@@ -27,7 +28,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "page/addCaseHistory/addCaseHistory",
+        "pagePath": "page/caseHistory/caseHistory",
         "iconPath": "@iconPathComponent",
         "selectedIconPath": "@selectedIconPathComponent",
         "text": "病历档案"

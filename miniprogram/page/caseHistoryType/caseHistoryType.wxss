@@ -5,7 +5,7 @@
 }
 
 .section__head {
-  padding: 0rpx 60rpx;
+  padding: 30rpx 60rpx;
   display: flex;
   justify-content: space-around;
   align-items: center;

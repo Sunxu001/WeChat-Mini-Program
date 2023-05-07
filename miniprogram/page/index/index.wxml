@@ -30,7 +30,7 @@
   <view class="calendar__title">就诊病例</view>
   <text class="calendar__text">记录每一次就诊时间，帮助你快速回顾身体状况！</text>
   <view class="calendar__section">
-    <calendar />
+    <calendar selectDate="{{date}}" />
   </view>
   </view>
 </view>

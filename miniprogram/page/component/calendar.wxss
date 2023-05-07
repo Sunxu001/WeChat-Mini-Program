@@ -55,3 +55,7 @@
 .notCurrentMonth{
   color: #939393;
 }
+
+.action{
+  background: #e1edff;
+}

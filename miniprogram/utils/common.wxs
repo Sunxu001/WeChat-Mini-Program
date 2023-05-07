@@ -1,0 +1,9 @@
+function comparison(arr, value) {
+  if (!arr.length || !value) return;
+  
+  return arr.some(function (v) {
+    return v == value
+  })
+}
+
+module.exports.comparison = comparison

@@ -1,9 +1,10 @@
+<wxs src="../../utils/common.wxs" module="common" />
 <view class="calendar">
   <view class="calendar__head">
     <text>{{monthName[newDate.month]}} {{newDate.year}}</text>
     <view class="calendar__box">
-      <text>左</text>
-      <text>右</text>
+      <text bindtap="handleReduce">左</text>
+      <text bindtap="handleIncrease">右</text>
     </view>
   </view>
   <view class="calendar__title">
@@ -11,7 +12,7 @@
   </view>
   <view class="calendar__date">
     <view class="calendar__cloumn" wx:for="{{7}}" wx:for-index="i" wx:key="i">
-      <view class="calendar__item" wx:for="{{7}}" wx:for-index="j" wx:key="j">
+      <view class="calendar__item {{common.comparison(day,date[i*7+j]) ?'action': ''}}" wx:for="{{7}}" wx:for-index="j" wx:key="j">
         {{date[i*7+j]}}
       </view>
     </view>

@@ -13,7 +13,6 @@ Page({
     this.init()
   },
   init() {
-    console.log('pull');
     database.collection('medical-history-sheet').get().then(res => {
       if (res.errMsg !== "collection.get:ok") {
         wx.showModal({

@@ -1,14 +1,14 @@
 import * as utils from '../../utils/util'
 Component({
-  /**
-   * 组件的属性列表
-   */
   properties: {
-
+    selectDate: {
+      type: Array,
+      value: []
+    }
   },
   attached() {
-    // this.init();
     this.getDate();
+    this.init();
   },
 
   /**
@@ -23,13 +23,22 @@ Component({
       month: new Date().getMonth(),
       week: new Date().getDate()
     },
-    dateWeek: null
+    dateWeek: null,
+    day: []
   },
-
-  /**
-   * 组件的方法列表
-   */
   methods: {
+    init() {
+      const arr = this.data.selectDate.map(v => {
+        let date_str = v.split('-')
+        if (Number(date_str[0]) == this.data.newDate?.year && Number(date_str[1] - 1 == this.data.newDate?.month)) {
+          return Number(date_str[2])
+        }
+      })
+      this.setData({
+        day: arr
+      })
+    },
+
     getDate: function () {
       let currentFirstDay = utils.getDate(this.data.newDate.year, this.data.newDate.month, 1);
       let date = currentFirstDay.getDay();
@@ -39,13 +48,38 @@ Component({
       for (let i = 0; i < 42; i++) {
         arr.push(new Date(startDay + i * 60 * 60 * 1000 * 24).getDate())
       }
-      for(let i= arr.indexOf(1)-1;i>=0;i--){
+      for (let i = arr.indexOf(1) - 1; i >= 0; i--) {
         arr[i] = ''
       }
-      arr = arr.slice(0,arr.lastIndexOf(1))
+      arr = arr.slice(0, arr.lastIndexOf(1))
       this.setData({
         date: arr,
       })
+    },
+    handleIncrease() {
+      this.setData({
+        newDate: {
+          ...this.data.newDate,
+          month: this.data.newDate.month + 1 > this.data.monthName.length - 1 ? 0 : this.data.newDate.month + 1
+        }
+      })
+      this.getDate();
+      this.init();
+    },
+    handleReduce() {
+      this.setData({
+        newDate: {
+          ...this.data.newDate,
+          month: this.data.newDate.month - 1 < 0 ? 11 : this.data.newDate.month - 1
+        }
+      })
+      this.getDate();
+      this.init();
+    },
+  },
+  observers: {
+    'selectDate': function () {
+      this.init()
     }
   }
 })

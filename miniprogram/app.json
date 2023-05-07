@@ -1,7 +1,7 @@
 {
   "pages": [
-    "page/API/index",
     "page/DataBtn/index",
+    "page/API/index",
     "page/PersonalInfo/index",
     "page/index/index",
     "page/cloud/index",

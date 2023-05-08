@@ -1,17 +1,12 @@
-<view class="section__model" style="height: {{height}}">
-  <view class="section__close" bindtap="handleClose">
-    关闭
-  </view>
-  <view class="section__title">
-    标题
-  </view>
-  <view class="section__form">
-    <view class="form__item">
-      <text>日期</text>
-      <text>2023/4/12</text>
+<view class="section__model" style="height: {{height}};background-color: {{subject}};">
+    <view class="section__close" bindtap="handleClose">
+      关闭
     </view>
-  </view>
-  <view class="section__button"> 
-    <button>添加</button>
-  </view>
+    <view class="section__title">
+      {{title}}
+    </view>
+    <view class="section__form">
+      <slot />
+    </view>
+   
 </view>

@@ -1,22 +1,15 @@
+<wxs src="../../utils/common.wxs" module="common" />
 <view class="section">
   <view class="section__head">
-    <text>心率</text>
+    <text>{{dataType}}</text>
     <button class="add__button" style="width: 240rpx;" bindtap="handleAdd">添加数据</button>
   </view>
-  <view class="section__date">
+  <view class="section__date" style="background-color:{{subject[dataType]}}">
     <view class="date__tags">
-      <view style="border: none;">
-        日
+      <view wx:for="{{dateName}}" wx:key="index" style="border: {{!index && 'none'}};background-color: {{dateName[index]==activeDateName?subject[dataType]:''}};" bindtap="handleCutDate" data-name="{{dateName[index]}}">
+        <text>{{item}}</text>
       </view>
-      <view>
-        周
-      </view>
-      <view>
-        月
-      </view>
-      <view>
-        年
-      </view>
+
     </view>
     <view class="form__data">
       <view style="margin-top: 10rpx;">
@@ -27,17 +20,67 @@
         </view>
         <text style="font-size: 30rpx;">4月18日</text>
       </view>
-      <view style="margin-top: 10rpx;">
+      <view style="margin-top: 10rpx;" wx:if="{{dataType == '血压'}}">
         <text style="font-size: 50rpx;">低压120</text>
       </view>
     </view>
-  <view class="section__chats">
-    <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas"></canvas>
-  </view>
+    <view class="section__chats">
+      <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas"></canvas>
+    </view>
   </view>
   <view class="section__text">
-    <view style="font-size: 34rpx;">温馨提示</view>
-    如果如果如果如果如果如果如果如果如果如果如果如果如果如果如果如果如果如果如果
+    <view style="font-size: 34rpx;">温馨提示：</view>
+    <text decode="{{true}}" wx:if="{{dataType == '心率'}}">
+      &emsp;&emsp;如果您的静息心率持续高于 100 次/分钟（心动过速）或您不是受训运动员而静息心率低于 60 次/分钟（心动过缓），尤其是如果您还伴有昏厥、头晕或呼吸短促等其他体征或症状，请向及时医生咨询！</text>
+    <text decode="{{true}}" wx:if="{{dataType== '血压'}}">
+      &emsp;&emsp;正常成年人血压收缩压大于等于90毫米汞柱，小于140 毫米汞柱，舒张压大于等于60毫米汞柱，小于90毫米汞柱。白天略高，晚上略低，冬季略高于夏季。运动、紧张等也会暂时升高。脉压是收缩压与舒张压的差值，正常为30～40 毫米汞柱。收缩压达到130～139毫米汞柱或舒张压达到85～89 毫米汞柱时，称血压正常高值，应当向医生咨询。</text>
+    <text decode="{{true}}" wx:if="{{dataType == '血糖'}}">
+      &emsp;&emsp;血糖正常值是指人空腹的时候血糖值在3.9～6.1毫摩尔/升，血糖值对于治疗疾病和观察疾病都有着指导意义。空腹血浆血糖超过7.0毫摩尔/升有可能是糖尿病。请及时就医！</text>
+    <text decode="{{true}}" wx:if="{{dataType == '胆固醇（血脂）'}}">
+      &emsp;&emsp;医学界将血清总胆固醇水平大致分为以下三个等级：合适范围5.72毫摩/升（220毫克/分升）。边缘升高5.23~5.69毫摩/升（201-219毫克/分升）。过高值5.72毫摩/升（220毫克/分升）。</text>
+    <text decode="{{true}}" wx:if="{{dataType == '体重'}}">
+      &emsp;&emsp;体重是反映和衡量一个人健康状况的重要标志之一，过胖和过瘦都不利于健康，身高体重不协调也不会给人以美感。体重的变化，会直接反映身体长期的热量平衡状态。 [1] 可以参考BMI指数，看自己的体重是否超标，因为每个人的骨骼大小存在差异，单纯的标准体重不一定适合自己，要找到适合自己最佳体重。</text>
   </view>
-<popup-model wx:if="{{dateItem}}" bind:close="close"></popup-model>
+  <popup-model wx:if="{{dateItem}}" title="{{dataType}}" subject="{{subject[dataType]}}" bind:close="close">
+    <form style="display: flex;justify-content: center;" bindsubmit="handleSubmit" slot="form">
+      <view class="form__item" style="border: none;">
+        <picker style="width: 100%;" mode="date" value='{{formData.date}}' bindchange="handleChange" data-name="date">
+          <view class="picker">
+            <block>日期：</block>
+            <view>
+              {{formData.date}}
+            </view>
+          </view>
+        </picker>
+      </view>
+      <view class="form__item">
+        <picker style="width: 100%;" mode="time" value='{{fromData.time}}' bindchange="handleChange" data-name="time">
+          <view class="picker">
+            <block>时间：</block>
+            <view>
+              {{formData.time}}
+            </view>
+          </view>
+        </picker>
+      </view>
+      <view class="form__item" wx:if="{{dataType == '心率'}}">
+        <text>次/分：</text><input type="number" name='number' value="{{formData.number}}" />
+      </view>
+      <view class="form__item" wx:if="{{dataType == '血压'}}">
+        <text>高压：</text><input type="number" name='high' value="{{formData.high}}" />
+      </view>
+      <view class="form__item" wx:if="{{dataType == '血压'}}">
+        <text>低压：</text><input type="number" name='lowTension' value="{{formData.lowTension}}" />
+      </view>
+      <view class="form__item" wx:if="{{dataType == '血糖' || dataType == '胆固醇（血脂）'}}">
+        <text>毫摩尔/升：</text><input name='liter' type="number" value="{{formData.liter}}" />
+      </view>
+      <view class="form__item" wx:if="{{dataType == '体重'}}">
+        <text>公斤/kg：</text><input name='kg' type="number" value="{{formData.kg}}" />
+      </view>
+      <view class="section__button" style="position: absolute;bottom: 20rpx;">
+        <button form-type="submit">添加</button>
+      </view>
+    </form>
+  </popup-model>
 </view>

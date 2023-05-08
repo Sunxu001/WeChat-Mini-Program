@@ -4,7 +4,14 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    title: {
+      type: String,
+      value: ''
+    },
+    subject: {
+      type: String,
+      value: ''
+    }
   },
 
   /**
@@ -13,7 +20,7 @@ Component({
   data: {
     height: '0%'
   },
-  attached(){
+  ready(){
     this.setData({
       height: '60%'
     })
@@ -23,13 +30,13 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    handleClose:function(){
+    handleClose(){
       this.setData({
         height: '0%'
       })
       setTimeout(()=>{
         this.triggerEvent('close')
-      },500)
+      },300)
     }
   },
 

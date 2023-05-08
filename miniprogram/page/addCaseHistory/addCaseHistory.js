@@ -6,10 +6,6 @@ Page({
     imgUrl: []
   },
 
-  onLoad(options) {
-
-  },
-
   handleSubmit(res) {
     const formData = res.detail.value
     for (let k in formData) {
@@ -23,14 +19,19 @@ Page({
       }
     }
 
+    this.setData({
+      formData
+    })
+
     database.collection('medical-history-sheet').add({
       data: {
-        ...formData,
+        ...this.data.formData,
         imgUrl: this.data.imgUrl || []
       },
     }).then(res => {
       if (res._id || res.errMsg == 'collection.add:ok') {
         wx.showToast({
+          icon: 'success',
           title: '添加成功',
         })
         setTimeout(() => {
@@ -47,7 +48,6 @@ Page({
     })
   },
   bindDateChange(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       date: e.detail.value
     })
@@ -58,7 +58,6 @@ Page({
     })
   },
   handleUpload() {
-    console.log(new Date());
     wx.chooseImage({
       success: chooseResult => {
         wx.cloud.uploadFile({

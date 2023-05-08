@@ -11,7 +11,7 @@
   ],
   "window": {
     "navigationBarTextStyle": "@navigationBarTextStyle",
-    "navigationBarTitleText": "演示",
+    "navigationBarTitleText": "病历管理",
     "navigationBarBackgroundColor": "@navigationBarBackgroundColor",
     "backgroundColor": "@backgroundColor"
   },

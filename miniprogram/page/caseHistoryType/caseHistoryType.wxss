@@ -22,7 +22,6 @@
 
 .section__date {
   padding: 30rpx 20rpx;
-  background-color: #a8d7f9;
   border-radius: 30rpx;
   display: flex;
   flex-direction: column;
@@ -80,3 +79,26 @@
   height: 100%;
 }
 
+.form__item {
+  padding: 10rpx;
+  width: 600rpx;
+  border-top: 1px solid #dddddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form__item input{
+  text-align: end;
+}
+
+.picker{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.section__button button {
+  width: 620rpx;
+  background-color: #6bd1d1;
+}

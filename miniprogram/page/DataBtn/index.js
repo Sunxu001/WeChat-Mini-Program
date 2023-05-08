@@ -14,7 +14,7 @@ Page({
   onLoad(options) {
 
   },
-  handleToAdd: function (e) {
+  handleTo (e) {
     const {
       item
     } = e.currentTarget.dataset

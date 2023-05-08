@@ -1,9 +1,38 @@
 function comparison(arr, value) {
   if (!arr.length || !value) return;
-  
+
   return arr.some(function (v) {
     return v == value
   })
 }
 
-module.exports.comparison = comparison
+function objectKeys(obj) {
+  var str = JSON.stringify(obj);
+  var reg = getRegExp('"(\w+)":|[{}]', "g");
+  var keys = [];
+  var nested = 0;
+  var result = null;
+
+  while((result = reg.exec(str)) !== null) {
+    var match = result[0]
+
+    switch(match) {
+      case "{":
+        nested++;
+        break;
+      case "}":
+        nested--;
+        break;
+      default:
+        if (nested === 1) keys.push(result[1]);
+        break;
+    }
+  }
+  
+  return keys;
+}
+
+module.exports = {
+  comparison:comparison,
+  objectKeys:objectKeys
+}

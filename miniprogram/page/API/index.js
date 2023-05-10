@@ -306,4 +306,9 @@ Page({
       isSetTabBarPage: false
     })
   },
+  handleToAdd: function () {
+    wx.navigateTo({
+      url: '/page/PersonalInfo/index'
+    })
+  },
 })

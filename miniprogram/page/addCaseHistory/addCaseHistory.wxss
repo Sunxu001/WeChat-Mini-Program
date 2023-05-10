@@ -1,6 +1,7 @@
 .section {
   width: 100%;
   height: 94%;
+  margin-bottom: 50rpx;
   background: linear-gradient(#d1e6ff, #f9fbff);
   padding-top: 50rpx;
 }
@@ -63,7 +64,13 @@
 
 .section__button__box{
   margin-top: 10rpx;
+  margin-bottom: 20rpx;
   width: 110%;
+}
+.section__upload__box image{
+  width: 150rpx;
+  height: auto;
+  padding-left: 170rpx;
 }
 
 .section__button{

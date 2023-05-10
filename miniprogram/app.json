@@ -1,9 +1,9 @@
 {
   "pages": [
+    "page/index/index",
     "page/API/index",
     "page/DataBtn/index",
     "page/PersonalInfo/index",
-    "page/index/index",
     "page/cloud/index",
     "page/addCaseHistory/addCaseHistory",
     "page/caseHistoryType/caseHistoryType",

@@ -8,27 +8,27 @@
   </view>
   <!--按钮-->
   <view class="record-btn">
-    <button bindtap="handleTo" data-item="心率">
+    <button bindtap="handleToAdd" data-item="心率">
       <image src="../../image/icon-heartPulse.png" mode="widthFix" />
       <text>心率</text>
     </button>
 
-    <button bindtap="handleTo" data-item="血压">
+    <button bindtap="handleToAdd" data-item="心率">
       <image src="../../image/icon-pressure.png" mode="widthFix" />
       <text>血压</text>
     </button>
 
-    <button bindtap="handleTo" data-item="血糖">
+    <button>
       <image src="../../image/icon-sugar.png" mode="widthFix" />
       <text>血糖</text>
     </button>
 
-    <button bindtap="handleTo" data-item="胆固醇（血脂）">
+    <button>
       <image src="../../image/icon-fat.png" mode="widthFix" />
       <text>胆固醇（血脂）</text>
     </button>
 
-    <button bindtap="handleTo" data-item="体重">
+    <button>
       <image src="../../image/icon-weight.png" mode="widthFix" />
       <text>体重</text>
     </button>

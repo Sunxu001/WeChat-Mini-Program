@@ -6,8 +6,8 @@
 }
 /*login模块*/
 .login image{
-  height: 6rem;
-  width: 6rem;
+  height: 250rpx;
+  width: 250rpx;
 }
 .login button{
   margin-bottom: 2rem;
@@ -18,38 +18,43 @@
 /*信息页面模块*/ 
 /*信息栏模块*/ 
 .user-info { 
-  width: 20rem;
-  height: 12rem;
-  margin-left: -0.5rem;
+  width: 800rpx;
+  height: 300rpx;
+  margin-left: -100rpx;
 } 
 
 .user-info image{ 
   position: relative; 
-  line-height: 2rem; 
+  line-height: 10rpx; 
 } 
 .user-info button{ 
   width: 100%; 
-  line-height: 2.5rem; 
+  line-height: 10rpx; 
   margin-top: 0; 
-  border-bottom: 1px solid gray;
-  background-color: #fff;
+  border-bottom: 1px solid rgb(163, 163, 163);
+  background-color:#FFFFFF;
 } 
 
 .btn-icon{ 
   position:absolute; 
   float: inline-start; 
-  left: 0.5rem; 
-  height: 2.5rem; 
-  width: 2.5rem ; 
+  left: 50rpx; 
+  height: 80rpx; 
+  width: 80rpx; 
 } 
 .wtxt{
-  margin-left: -5rem;
+  position:absolute; 
+  padding-top: 35rpx;
+  line-height: 10rpx; 
+  margin-left: -230rpx;
 }
 .arrow-btn{ 
   position:absolute; 
   float: inline-end; 
-  line-height: 2rem; 
-  right: 0.5rem; 
-  height: 2rem; 
-  width: 2rem ; 
+  line-height: 10rpx; 
+  right: 0.5rpx; 
+  height: 60rpx; 
+  width: 60rpx; 
+  padding-top: 5rpx;
+  padding-right: 50rpx;
 } 

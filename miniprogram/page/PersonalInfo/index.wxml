@@ -1,9 +1,5 @@
  <!--page/用户信息/index.wxml--> 
  <view class="userinfo"> 
-  <view class="hd-icon"> 
-  <image class="icon-back" src="../../image/back.png" mode="widthFix"/> 
-<image class="icon-close" src="../../image/close.png" mode="widthFix"/> 
-</view> 
 <view class="hd-userinfo"> 
   <rich-text nodes="<h3>用户信息</h3>"/> 
   <image class="picture" src="../../image/profile- icon.png" mode="widthFix"/> 

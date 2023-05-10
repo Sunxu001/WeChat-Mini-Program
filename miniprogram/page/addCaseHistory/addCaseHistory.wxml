@@ -14,7 +14,7 @@
     <view class="section__upload">
       <text class="section__title">附件（病历照片）：</text>
       <view class="section__upload__box" bindtap="handleUpload">
-        点我上传
+        <image src="../../image/add_photo.png" mode="widthFix"/>
       </view>
       <view class="section__image">
         <view wx:for="{{imgUrl}}" wx:key="index">

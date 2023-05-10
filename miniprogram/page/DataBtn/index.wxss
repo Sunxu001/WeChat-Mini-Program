@@ -2,32 +2,37 @@
 @import "../common/index.wxss"; 
 /* 背景颜色 */ 
 .record-bak{ 
+  margin-bottom: 50rpx;
   background: linear-gradient(180deg, rgba(0, 117, 255, 0.2) 0%, rgba(0, 117, 255, 0) 100%), #FFFFFF; 
 } 
 /* 头部文本 */ 
 .txt{ 
-  margin-top: 2rem; 
-  margin-left: 2rem; 
-  margin-bottom: 1rem; 
+  margin-top: 30rpx; 
+  margin-left: 50rpx; 
+  margin-bottom: 20rpx; 
+  font-family: 'PingFang SC'
 } 
 /* 健康数据按钮 */ 
 .record-btn button{ 
   width: 90%; 
-  height: 6rem; 
-  border-radius: 15px; 
+  height: 160rpx; 
+  margin-top: 23rpx;
+  margin-bottom: 40rpx;
+  border-radius: 15rpx; 
 } 
 .record-btn image{ 
   float: left; 
-  line-height: 6rem; 
-  padding-top: 0.5rem; 
-  width: 4rem; 
+  line-height: 100rpx; 
+  width: 120rpx; 
   height: auto; 
+  padding-top: 3rpx;
+  padding-left: 25rpx;
 } 
 .record-btn text{ 
-  line-height: 5rem; 
-  right: 1rem; 
-  text-align: center; 
-  font-size: x-large; 
+  line-height: 100rpx; 
+  text-align: center;
+  font-size:x-large; 
+  font-family: 'PingFang SC'
 } 
 .record-btn button:nth-child(1){ 
   background: rgba(33, 175, 255, 0.34); 

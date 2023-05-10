@@ -6,23 +6,24 @@
     <image src="../../image/profile- icon.png" mode="widthFix"/>
     <button>点击登陆</button>
     </view>
-  <!--信息栏-->
+<!--信息栏-->
 <view class="user-info">
-<button>
-<image class="btn-icon" src="../../image/icon-Personal Info.png" mode="widthFix"/>
+<button  bindtap="handleToAdd">
+<image class="btn-icon" src="../../image/personal_info.png" mode="widthFix"/>
 <text class="wtxt">个人信息</text>
-<image class="arrow-btn" src="../../image/arrow.png" mode="widthFix"/>
+<image class="arrow-btn" src="../../image/arrow-right.png" mode="widthFix"/>
 </button>
 <button>
-<image  class="btn-icon"  src="../../image/icon-use.png" mode="widthFix"/>
+<image  class="btn-icon"  src="../../image/instructions.png" mode="widthFix"/>
 <text class="wtxt" >使用说明</text>
-<image class="arrow-btn" src="../../image/arrow.png" mode="widthFix"/>
+<image class="arrow-btn" src="../../image/arrow-right.png" mode="widthFix"/>
 </button>
 <button>
-<image  class="btn-icon"  src="../../image/icon-Qfeedback.png" mode="widthFix"/>
+<image  class="btn-icon"  src="../../image/customer-service.png" mode="widthFix"/>
 <text class="wtxt">问题反馈</text>
-<image class="arrow-btn" src="../../image/arrow.png" mode="widthFix"/>
+<image class="arrow-btn" src="../../image/arrow-right.png" mode="widthFix"/>
 </button>
 </view>
   </view>
 </view>
+

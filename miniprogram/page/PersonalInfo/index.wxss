@@ -4,73 +4,63 @@
   background: linear-gradient(180deg, rgba(0, 117, 255, 0.2) 0%, rgba(26, 133, 255, 0.165625) 13.54%, rgba(17, 129, 249, 0.134352) 20.43%, rgba(0, 121, 240, 0.0804464) 32.29%, rgba(149, 208, 253, 0.00591518) 68.75%, rgba(154, 211, 253, 0) 86.98%), #FFFFFF; 
 } 
 /* 头部：用户信息+头像+用户名 */ 
-.hd-icon{ 
-  margin:1rem; 
-} 
-.icon-back{ 
-  float: inline-start; 
-  height: 1rem; 
-  width:1rem; 
-} 
-.icon-close{ 
-  float: inline-end; 
-  height: 2rem; 
-  width: 2rem; 
-} 
+
 .hd-userinfo{ 
-  height: 12rem; 
-  margin: 2rem; 
+  height: 350rpx; 
+  margin: 50rpx 50rpx 30rpx 50rpx; 
 } 
 .hd-userinfo rich-text{ 
   text-align: center; 
 } 
 .picture{ 
-  align-items: center; 
-  margin: 0.5rem 4rem 0.5rem 6rem; 
-  height: 6rem; 
-  width: 6rem; 
+  margin-left: 225rpx;
+  height: 200rpx; 
+  width: 200rpx; 
 } 
 .hd-userinfo input{ 
- margin-left: 7rem; 
-  width: 4rem; 
-  height: 2rem; 
-  border-bottom: 1px solid rgb(102, 102, 102); 
+ margin-left: 270rpx; 
+  width: 200rpx; 
+  height: 25rpx; 
+  font-size: 35rpx;
+  color: rgb(112, 112, 112);
 } 
  
 /* 个人信息表单 */ 
 .body-userinfo{ 
   position: absolute; 
-  width: 20rem; 
-  height: 27.5rem; 
-  left: 1.3rem; 
+  width: 660rpx; 
+  height: 1025rpx; 
+  left: 45rpx; 
   background: #FFFFFF; 
-  box-shadow: 0px 4px 10px rgba(51, 48, 48, 0.25); 
+  box-shadow: 0rpx 20rpx 30rpx rgba(51, 48, 48, 0.25); 
   border-radius: 10%; 
 } 
 .personal-info{ 
   position: relative; 
-  margin-top: 1rem ; 
+  margin-top: 30rpx; 
 } 
 .personal-info rich-text{ 
   text-align: center; 
+  font-size: 45rpx;
 } 
 .info-input{ 
-  width: 18rem; 
-  margin: 1rem 1rem; 
+  width: 580rpx; 
+  margin: 40rpx 40rpx; 
 } 
 .info-input text{ 
-  width: 5rem; 
+  width: 5rpx; 
+  font-size: 35rpx;
 } 
 .info-input input{ 
   float: right; 
-  width: 11.3rem; 
-  height: 1.5rem; 
-  border: 1px solid black; 
-  border-radius: 3rem; 
-  color: darkgray; 
+  width: 400rpx; 
+  height: 65rpx; 
+  border: 1rpx solid rgb(65, 65, 65); 
+  border-radius: 20rpx; 
+  color: rgb(0, 0, 0); 
 } 
 .submit-btn button{ 
-  width: 18rem; 
+  width: 580rpx; 
   color: #FFFFFF; 
   background-color: #52CCC5; 
 } 

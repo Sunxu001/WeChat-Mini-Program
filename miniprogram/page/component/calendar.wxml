@@ -3,8 +3,12 @@
   <view class="calendar__head">
     <text>{{monthName[newDate.month]}} {{newDate.year}}</text>
     <view class="calendar__box">
-      <text bindtap="handleReduce">左</text>
-      <text bindtap="handleIncrease">右</text>
+      <view bindtap="handleReduce" >
+      <image src="../../image/calendar_left.png"  mode="widthFix"/>
+      </view>
+      <view bindtap="handleIncrease" >
+        <image src="../../image/calendar_right.png" mode="widthFix"/>
+      </view>
     </view>
   </view>
   <view class="calendar__title">

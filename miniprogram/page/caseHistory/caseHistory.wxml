@@ -34,8 +34,8 @@
           </view>
         </view>
         <view wx:if="{{select}}" class="section__select" bindtap="handleSelect" data-item="{{item}}">
-          <text wx:if="{{item.select}}">已选择</text>
-          <text wx:else>未选择</text>
+          <image wx:if="{{item.select}}" src="../../image/success-filling.png" mode="widthFix"/>
+          <image wx:else src="../../image/Unselected.png" mode="widthFix"/>
         </view>
       </view>
     </view>

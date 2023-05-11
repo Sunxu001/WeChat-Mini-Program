@@ -15,17 +15,17 @@
       <view style="margin-top: 10rpx;">
         <text>本次数据范围</text>
         <view>
-          <text style="font-size: 50rpx;">86</text>
-          <text>次/分</text>
+          <text style="font-size: 50rpx;">
+            <text wx:if="{{dataType == '血压'}}">高压</text>{{meanValue}}</text>
         </view>
-        <text style="font-size: 30rpx;">4月18日</text>
+        <text style="font-size: 30rpx;">{{echartOptions.date[1]}}月{{echartOptions.date[2]}}日</text>
       </view>
       <view style="margin-top: 10rpx;" wx:if="{{dataType == '血压'}}">
-        <text style="font-size: 50rpx;">低压120</text>
+        <text style="font-size: 50rpx;" wx:if="{{lowTension}}">低压{{lowTension}}</text>
       </view>
     </view>
     <view class="section__chats">
-      <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas"></canvas>
+      <canvas canvas-id="lineCanvas" disable-scroll="true" wx:if="{{!dateItem}}" class="canvas"></canvas>
     </view>
   </view>
   <view class="section__text">
@@ -41,7 +41,7 @@
     <text decode="{{true}}" wx:if="{{dataType == '体重'}}">
       &emsp;&emsp;体重是反映和衡量一个人健康状况的重要标志之一，过胖和过瘦都不利于健康，身高体重不协调也不会给人以美感。体重的变化，会直接反映身体长期的热量平衡状态。 [1] 可以参考BMI指数，看自己的体重是否超标，因为每个人的骨骼大小存在差异，单纯的标准体重不一定适合自己，要找到适合自己最佳体重。</text>
   </view>
-  <popup-model wx:if="{{dateItem}}" title="{{dataType}}" subject="{{subject[dataType]}}" bind:close="close">
+  <popup-model wx:if="{{dateItem}}" title="{{dataType}}" subject="{{subject[dataType]}}" bind:close="close" bind:change="init">
     <form style="display: flex;justify-content: center;" bindsubmit="handleSubmit" slot="form">
       <view class="form__item" style="border: none;">
         <picker style="width: 100%;" mode="date" value='{{formData.date}}' bindchange="handleChange" data-name="date">
@@ -67,19 +67,19 @@
         <text>次/分：</text><input type="number" name='number' value="{{formData.number}}" />
       </view>
       <view class="form__item" wx:if="{{dataType == '血压'}}">
-        <text>高压：</text><input type="number" name='high' value="{{formData.high}}" />
+        <text>高压：</text><input type="number" name='number' value="{{formData.number}}" />
       </view>
       <view class="form__item" wx:if="{{dataType == '血压'}}">
         <text>低压：</text><input type="number" name='lowTension' value="{{formData.lowTension}}" />
       </view>
       <view class="form__item" wx:if="{{dataType == '血糖' || dataType == '胆固醇（血脂）'}}">
-        <text>毫摩尔/升：</text><input name='liter' type="number" value="{{formData.liter}}" />
+        <text>毫摩尔/升：</text><input name='number' type="number" value="{{formData.number}}" />
       </view>
       <view class="form__item" wx:if="{{dataType == '体重'}}">
-        <text>公斤/kg：</text><input name='kg' type="number" value="{{formData.kg}}" />
+        <text>公斤/kg：</text><input name='number' type="number" value="{{formData.number}}" />
       </view>
-      <view class="section__button" style="position: absolute;bottom: 20rpx;">
-        <button form-type="submit">添加</button>
+      <view class="section__button" style="position: absolute;bottom: 120rpx;">
+        <button form-type="submit" loading="{{submitting}}" disabled="{{submitting}}">添加</button>
       </view>
     </form>
   </popup-model>

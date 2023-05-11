@@ -1,52 +1,66 @@
- <!--page/用户信息/index.wxml--> 
- <view class="userinfo"> 
-<view class="hd-userinfo"> 
-  <rich-text nodes="<h3>用户信息</h3>"/> 
-  <image class="picture" src="../../image/profile- icon.png" mode="widthFix"/> 
-  <input type="text" value="用户名"/> 
-</view> 
-<view class="body-userinfo"> 
-<view class="personal-info"> 
-  <rich-text nodes="<h4>个人信息</h4>"/> 
-  <view class="info-input"> 
-    <text>真实姓名：</text> 
-    <input type="text"/> 
-  </view> 
-<view class="info-input"> 
-  <text>性别：</text> 
-  <input type="text"/> 
-</view> 
-  <view class="info-input"> 
-    <text>出生日期：</text> 
-  <input type="date" /> 
-  </view> 
-  <view class="info-input"> 
-    <text>血型：</text> 
-  <input type="text"/> 
-  </view> 
-   
-  <view class="info-input"> 
-    <text>身高：</text> 
-  <input type="number" /> 
-  </view> 
-  
-  <view class="info-input"> 
-    <text>体重：</text> 
-  <input type="number" /> 
-  </view> 
-   
-  <view class="info-input"> 
-    <text>病史：</text> 
-  <input type="text"/> 
-  </view> 
-  <view class="info-input"> 
-    <text>家庭住址：</text> 
-  <input type="text"/> 
-  </view> 
-</view> 
-<view class="submit-btn"> 
-  <button>保存</button> 
- </view> 
-</view> 
- 
-</view> 
+<!--page/用户信息/index.wxml-->
+<view class="userinfo">
+  <view class="hd-userinfo">
+    <rich-text nodes="<h3>用户信息</h3>" />
+    <image wx:if="{{!userData.avatarUrl}}" class="picture" src="../../image/profile- icon.png" mode="widthFix" />
+    <image wx:else class="picture" src="{{userData.avatarUrl}}" mode="widthFix" />
+    <view wx:if="{{userData.nickName}}" style="text-align: center;">
+      用户名：{{userData.nickName || '微信用户'}}
+    </view>
+  </view>
+  <view class="body-userinfo">
+    <form bindsubmit="submit">
+      <view class="personal-info">
+        <rich-text nodes="<h4>个人信息</h4>" />
+        <view class="info-input">
+          <text>真实姓名：</text>
+          <input wx:if="{{isEdit}}" name="name" type="text" value="{{userInfo.name}}" />
+          <text wx:else>{{userInfo.name || '暂无'}}</text>
+        </view>
+        <view class="info-input">
+          <text>性别：</text>
+          <input wx:if="{{isEdit}}" name="gender" type="text" value="{{userInfo.gender}}" />
+          <text wx:else>{{userInfo.gender || '暂无'}}</text>
+        </view>
+        <view class="info-input">
+          <text>出生日期：</text>
+          <input wx:if="{{isEdit}}" name="date" type="date" value="{{userInfo.date}}" />
+          <text wx:else>{{userInfo.date || '暂无'}}</text>
+        </view>
+        <view class="info-input">
+          <text>血型：</text>
+          <input wx:if="{{isEdit}}" name="bloodType" type="text" value="{{userInfo.bloodType}}" />
+          <text wx:else>{{userInfo.bloodType || '暂无'}}</text>
+        </view>
+
+        <view class="info-input">
+          <text>身高：</text>
+          <input wx:if="{{isEdit}}" name="height" type="number" value="{{userInfo.height}}" />
+          <text wx:else>{{userInfo.height || '暂无'}}</text>
+        </view>
+
+        <view class="info-input">
+          <text>体重：</text>
+          <input name="weight" type="number" wx:if="{{isEdit}}" value="{{userInfo.weight}}" />
+          <text wx:else>{{userInfo.weight || '暂无'}}</text>
+        </view>
+
+        <view class="info-input">
+          <text>病史：</text>
+          <input wx:if="{{isEdit}}" name="medicalHistory" type="text" value="{{userInfo.medicalHistory}}" />
+          <text wx:else>{{userInfo.medicalHistory || '暂无'}}</text>
+        </view>
+        <view class="info-input">
+          <text>家庭住址：</text>
+          <input wx:if="{{isEdit}}" name="address" type="text" value="{{userInfo.address}}" />
+          <text wx:else>{{userInfo.address || '暂无'}}</text>
+        </view>
+      </view>
+      <view class="submit-btn">
+        <button bindtap="handleEdit" class="edit">{{isEdit?'取消':'编辑'}}</button>
+        <button wx:if="{{isEdit}}" form-type="submit" loading="{{submitting}}" disabled="{{submitting}}">保存</button>
+      </view>
+    </form>
+  </view>
+
+</view>

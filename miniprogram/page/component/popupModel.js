@@ -36,6 +36,7 @@ Component({
       })
       setTimeout(()=>{
         this.triggerEvent('close')
+        this.triggerEvent('change')
       },300)
     }
   },

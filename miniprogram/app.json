@@ -38,12 +38,6 @@
         "iconPath": "@iconPathAPI",
         "selectedIconPath": "@selectedIconPathAPI",
         "text": "我"
-      },
-      {
-        "pagePath": "page/cloud/index",
-        "iconPath": "@iconPathCloud",
-        "selectedIconPath": "@selectedIconPathCloud",
-        "text": "云开发"
       }
     ]
   },

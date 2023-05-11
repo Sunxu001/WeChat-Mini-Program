@@ -7,9 +7,9 @@
           <text wx:if="{{date}}" style="float: right;" catchtap="handleDeleteDate">x</text>
         </view>
       </picker>
-      <input type="text" name="name" class="input__item" placeholder="患者姓名" />
-      <input type="text" name="hospital" class="input__item" placeholder="就诊医院" />
-      <input type="text" name="pathogeny" class="input__item" placeholder="病因" />
+      <input type="text" name="name" class="input__item" placeholder="患者姓名" placeholder-style="color: gray" value="{{dataItem.name}}" />
+      <input type="text" name="hospital" class="input__item" placeholder="就诊医院" placeholder-style="color: gray" value="{{dataItem.hospital}}" />
+      <input type="text" name="pathogeny" class="input__item" placeholder="病因" placeholder-style="color: gray" value="{{dataItem.pathogeny}}" />
     </view>
     <view class="section__upload">
       <text class="section__title">附件（病历照片）：</text>
@@ -24,10 +24,10 @@
     </view>
     <view class="section__upload">
       <text class="section__title">其他信息：</text>
-      <textarea name='other' cols="7" rows="2" class="textarea__item" placeholder="其他信息" />
+      <textarea style="color: black;" name='other' cols="7" rows="2" class="textarea__item" placeholder="其他信息" placeholder-style="color: gray" value="{{dataItem.other}}" />
     </view>
     <view class="section__button__box">
-      <button class="section__button" style="width: 100%;" form-type="submit">保存</button>
+      <button class="section__button" style="width: 100%;" form-type="submit" disabled="{{submitting}}" loading="{{submitting}}">保存</button>
     </view>
   </view>
 </form>

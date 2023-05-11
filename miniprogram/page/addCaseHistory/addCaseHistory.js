@@ -1,9 +1,33 @@
+
 const database = wx.cloud.database()
 Page({
 
   data: {
     date: '',
+    formData: {},
+    submitting: false,
     imgUrl: []
+  },
+
+  onLoad(options) {
+    console.log(options, 'ss');
+    if (options._id) {
+      this.setData({
+        dataItem: options
+      })
+      this.init()
+    }
+  },
+
+  init() {
+    database.collection('medical-history-sheet').doc(this.data.dataItem._id).get().then(res => {
+      if (res.errMsg !== "document.get:ok") return;
+      this.setData({
+        dataItem: res.data,
+        imgUrl: res.data.imgUrl,
+        date: res.data.date
+      })
+    })
   },
 
   handleSubmit(res) {
@@ -20,32 +44,59 @@ Page({
     }
 
     this.setData({
-      formData
+      formData,
+      submitting: true
     })
-
-    database.collection('medical-history-sheet').add({
-      data: {
-        ...this.data.formData,
-        imgUrl: this.data.imgUrl || []
-      },
-    }).then(res => {
-      if (res._id || res.errMsg == 'collection.add:ok') {
+    if (this.data.dataItem?._id) {
+      database.collection('medical-history-sheet').doc(this.data.dataItem._id).update({
+        data: {
+          ...this.data.formData,
+          imgUrl: this.data.imgUrl,
+        }
+      }).then(res => {
+        if (!res.stats) {
+          wx.showToast({
+            title: '失败',
+          })
+          return;
+        }
         wx.showToast({
-          icon: 'success',
-          title: '添加成功',
+          title: '操作成功！',
         })
         setTimeout(() => {
           wx.switchTab({
             url: '/page/caseHistory/caseHistory',
           })
         }, 500)
-      } else {
-        wx.showToast({
-          icon: 'error',
-          title: '失败请稍后重试',
+      })
+    } else {
+      database.collection('medical-history-sheet').add({
+        data: {
+          ...this.data.formData,
+          imgUrl: this.data.imgUrl || []
+        },
+      }).then(res => {
+        this.setData({
+          submitting: false
         })
-      }
-    })
+        if (res._id || res.errMsg == 'collection.add:ok') {
+          wx.showToast({
+            icon: 'success',
+            title: '添加成功',
+          })
+          setTimeout(() => {
+            wx.switchTab({
+              url: '/page/caseHistory/caseHistory',
+            })
+          }, 500)
+        } else {
+          wx.showToast({
+            icon: 'error',
+            title: '失败请稍后重试',
+          })
+        }
+      })
+    }
   },
   bindDateChange(e) {
     this.setData({
@@ -60,6 +111,9 @@ Page({
   handleUpload() {
     wx.chooseImage({
       success: chooseResult => {
+        this.setData({
+          submitting: true
+        })
         wx.cloud.uploadFile({
           // 指定上传到的云路径
           cloudPath: `${+new Date()}.png`,
@@ -67,13 +121,16 @@ Page({
           filePath: chooseResult.tempFilePaths[0],
           // 成功回调
           success: res => {
-            console.log(res,'res');
             this.data.imgUrl.push(res.fileID)
             this.setData({
               imgUrl: this.data.imgUrl
             })
-            console.log(this.data.imgUrl,'url');
           },
+          complete: () => {
+            this.setData({
+              submitting: false
+            })
+          }
         })
       },
     })

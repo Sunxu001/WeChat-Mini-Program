@@ -1,29 +1,32 @@
 <set-tab-bar wx:if="{{isSetTabBarPage}}" bindunmount="leaveSetTabBarPage"></set-tab-bar>
 <view wx:else class="index page" data-weui-theme="{{theme}}">
   <view class="index-hd">
-  <!--用户登录-->
+    <!--用户登录-->
     <view class="login">
-    <image src="../../image/profile- icon.png" mode="widthFix"/>
-    <button>点击登陆</button>
+      <image wx:if='{{!userData.avatarUrl}}' src="../../image/profile- icon.png" mode="widthFix" />
+      <image wx:else src="{{userData.avatarUrl}}" mode="widthFix" />
+      <button wx:if="{{!userData.avatarUrl}}" bindtap="handleLogin">点击登陆</button>
+      <view wx:else>
+        {{userData.nickName}}
+      </view>
     </view>
-<!--信息栏-->
-<view class="user-info">
-<button  bindtap="handleToAdd">
-<image class="btn-icon" src="../../image/personal_info.png" mode="widthFix"/>
-<text class="wtxt">个人信息</text>
-<image class="arrow-btn" src="../../image/arrow-right.png" mode="widthFix"/>
-</button>
-<button>
-<image  class="btn-icon"  src="../../image/instructions.png" mode="widthFix"/>
-<text class="wtxt" >使用说明</text>
-<image class="arrow-btn" src="../../image/arrow-right.png" mode="widthFix"/>
-</button>
-<button>
-<image  class="btn-icon"  src="../../image/customer-service.png" mode="widthFix"/>
-<text class="wtxt">问题反馈</text>
-<image class="arrow-btn" src="../../image/arrow-right.png" mode="widthFix"/>
-</button>
-</view>
+    <!--信息栏-->
+    <view class="user-info">
+      <button bindtap="handleToAdd">
+        <image class="btn-icon" src="../../image/personal_info.png" mode="widthFix" />
+        <text class="wtxt">个人信息</text>
+        <image class="arrow-btn" src="../../image/arrow-right.png" mode="widthFix" />
+      </button>
+      <button>
+        <image class="btn-icon" src="../../image/instructions.png" mode="widthFix" />
+        <text>使用说明</text>
+        <image class="arrow-btn" src="../../image/arrow-right.png" mode="widthFix" />
+      </button>
+      <button>
+        <image class="btn-icon" src="../../image/customer-service.png" mode="widthFix" />
+        <text class="wtxt">问题反馈</text>
+        <image class="arrow-btn" src="../../image/arrow-right.png" mode="widthFix" />
+      </button>
+    </view>
   </view>
 </view>
-

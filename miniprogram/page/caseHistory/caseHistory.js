@@ -45,6 +45,12 @@ Page({
     })
   },
 
+  handleToEdit(e) {
+    wx.navigateTo({
+      url: '/page/addCaseHistory/addCaseHistory?_id=' + e.currentTarget.dataset.id,
+    })
+  },
+
   handleSelect(e) {
     const item = e.currentTarget.dataset.item
     this.data.list.forEach(v => {

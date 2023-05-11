@@ -2,16 +2,16 @@
   <view class="section__head">
     <button hidden="{{select}}" bindtap="handleEdit">管理</button>
     <button hidden="{{!select}}" bindtap="handleCancel">取消</button>
-    <button bindtap="handleDelete">删除</button>
+    <button wx:if="{{select}}" bindtap="handleDelete">删除</button>
   </view>
   <view wx:if="{{list.length}}">
     <view class="section__item" wx:for="{{list}}" wx:key="index">
       <view class="date__title">
         <text>{{item.date}}</text>
+        <text style="font-size: 32rpx;" bindtap="handleToEdit" data-id="{{item._id}}">编辑</text>
       </view>
       <view style="display: flex;align-items: center;justify-content: space-between;">
         <view>
-
           <view class="info">
             患者：{{item.name}}
           </view>
@@ -34,8 +34,8 @@
           </view>
         </view>
         <view wx:if="{{select}}" class="section__select" bindtap="handleSelect" data-item="{{item}}">
-          <image wx:if="{{item.select}}" src="../../image/success-filling.png" mode="widthFix"/>
-          <image wx:else src="../../image/Unselected.png" mode="widthFix"/>
+          <image wx:if="{{item.select}}" src="../../image/success-filling.png" mode="widthFix" />
+          <image wx:else src="../../image/Unselected.png" mode="widthFix" />
         </view>
       </view>
     </view>

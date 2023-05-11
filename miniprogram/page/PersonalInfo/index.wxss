@@ -2,20 +2,24 @@
 /* 背景 */ 
 .userinfo{ 
   background: linear-gradient(180deg, rgba(0, 117, 255, 0.2) 0%, rgba(26, 133, 255, 0.165625) 13.54%, rgba(17, 129, 249, 0.134352) 20.43%, rgba(0, 121, 240, 0.0804464) 32.29%, rgba(149, 208, 253, 0.00591518) 68.75%, rgba(154, 211, 253, 0) 86.98%), #FFFFFF; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 } 
 /* 头部：用户信息+头像+用户名 */ 
 
 .hd-userinfo{ 
   height: 350rpx; 
-  margin: 50rpx 50rpx 30rpx 50rpx; 
+  margin-top: 40rpx ; 
 } 
 .hd-userinfo rich-text{ 
   text-align: center; 
 } 
 .picture{ 
-  margin-left: 225rpx;
   height: 200rpx; 
   width: 200rpx; 
+  margin: 10rpx 0rpx;
 } 
 .hd-userinfo input{ 
  margin-left: 270rpx; 
@@ -27,17 +31,11 @@
  
 /* 个人信息表单 */ 
 .body-userinfo{ 
-  position: absolute; 
   width: 660rpx; 
-  height: 1025rpx; 
-  left: 45rpx; 
   background: #FFFFFF; 
   box-shadow: 0rpx 20rpx 30rpx rgba(51, 48, 48, 0.25); 
-  border-radius: 10%; 
-} 
-.personal-info{ 
-  position: relative; 
-  margin-top: 30rpx; 
+  border-radius: 25rpx; 
+  padding: 20rpx 0rpx 40rpx 0rpx;
 } 
 .personal-info rich-text{ 
   text-align: center; 
@@ -46,21 +44,31 @@
 .info-input{ 
   width: 580rpx; 
   margin: 40rpx 40rpx; 
+  display: flex;
 } 
 .info-input text{ 
-  width: 5rpx; 
+  width: 200rpx; 
   font-size: 35rpx;
 } 
 .info-input input{ 
-  float: right; 
+  padding: 0rpx 10rpx;
   width: 400rpx; 
   height: 65rpx; 
   border: 1rpx solid rgb(65, 65, 65); 
   border-radius: 20rpx; 
   color: rgb(0, 0, 0); 
 } 
+.submit-btn{
+  display: flex;
+  justify-content: space-between;
+}
 .submit-btn button{ 
-  width: 580rpx; 
   color: #FFFFFF; 
   background-color: #52CCC5; 
 } 
+.submit-btn .edit{
+  width: 180rpx;
+  color: black;
+  border: 1rpx solid black;
+  background-color: white;
+}

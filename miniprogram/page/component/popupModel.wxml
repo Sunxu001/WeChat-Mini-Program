@@ -1,4 +1,5 @@
-<view class="section__model" style="height: {{height}};background-color: {{subject}};">
+  <view class="section__model" style="height: {{height}};background-color: {{subject}};">
+  <cover-view style="background-color: {{subject}};"></cover-view>
     <view class="section__close" bindtap="handleClose">
       关闭
     </view>
@@ -8,5 +9,5 @@
     <view class="section__form">
       <slot />
     </view>
-   
-</view>
+
+  </view>

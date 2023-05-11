@@ -10,7 +10,7 @@ Page({
   data: {
     isSetTabBarPage: false,
     theme: 'light',
-    userInfo: {}
+    userData: {}
   },
   onLoad() {
     this.init()
@@ -73,6 +73,12 @@ Page({
     })
   },
   handleToAdd: function () {
+    if(!this.data.userData?.nickName){
+      wx.showToast({
+        title: '请先登录！',
+      })
+      return;
+    }
     wx.navigateTo({
       url: '/page/PersonalInfo/index'
     })

@@ -179,13 +179,13 @@ Page({
         data: arr
       }]
       let meanValue = 0 + unit
-      if(dataList.length){
+      if (dataList.length) {
         meanValue = dataList.length > 1 ? `${dataList[dataList.length-1]?.number}-${dataList[0]?.number} ${unit}` : `${dataList[0]?.number}${unit}`
       }
       if (this.data.dataType == '血压') {
-        let lowValue = dataList.length > 1 ? `${dataList[dataList.length-1]?.lowTension}-${dataList[0]?.lowTension} ${unit}` :  `${dataList[0]?.lowTension} ${unit}`;
+        let lowValue = dataList.length > 1 ? `${dataList[dataList.length-1]?.lowTension}-${dataList[0]?.lowTension}` : `${dataList[0]?.lowTension}`;
         this.setData({
-          lowTension: lowValue
+          lowTension: lowValue == 'undefined' ? 0 : lowValue
         })
         seriesData[0].name = '高压'
         const obj = {

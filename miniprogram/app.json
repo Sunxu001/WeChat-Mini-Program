@@ -4,7 +4,6 @@
     "page/API/index",
     "page/DataBtn/index",
     "page/PersonalInfo/index",
-    "page/cloud/index",
     "page/addCaseHistory/addCaseHistory",
     "page/caseHistoryType/caseHistoryType",
     "page/caseHistory/caseHistory"

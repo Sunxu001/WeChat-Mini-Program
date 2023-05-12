@@ -6,6 +6,7 @@ Page({
   data: {
     submitting: false,
     meanValue: '',
+    scopeDate: '',
     lowTension: 0,
     dataType: '',
     echartOptions: {
@@ -61,7 +62,8 @@ Page({
       echartOptions: {
         title: this.data.dataType,
         date: [year, month < 10 ? '0' + month : month, day < 10 ? '0' + day : day]
-      }
+      },
+      scopeDate: `${month}月${day}日`
     })
     let params = {}
     const dayValue = this.data.echartOptions
@@ -81,7 +83,8 @@ Page({
       }
       this.data.dateCategories['周'] = arr
       this.setData({
-        dateCategories: this.data.dateCategories
+        dateCategories: this.data.dateCategories,
+        scopeDate: `${month}月${arr[0]}日-${month}月${arr[arr.length-1]}日`
       })
     } else if (this.data.activeDateName == '月') {
       const arr = []
@@ -94,11 +97,12 @@ Page({
       }
       this.data.dateCategories['月'] = arr
       this.setData({
-        dateCategories: this.data.dateCategories
+        dateCategories: this.data.dateCategories,
+        scopeDate: `${arr[arr.length-1]}月-${arr[0]}月`
       })
     } else if (this.data.activeDateName == '年') {
       const arr = []
-      for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < 5; i++) {
         const value = Number(dayValue.date[0]) - i
         arr.push(String(value))
       }
@@ -107,7 +111,8 @@ Page({
       }
       this.data.dateCategories['年'] = arr
       this.setData({
-        dateCategories: this.data.dateCategories
+        dateCategories: this.data.dateCategories,
+        scopeDate: `${arr[0]}年-${arr[arr.length - 1]}年`
       })
     }
     database.collection('personage-data').orderBy('date', 'desc').where({
@@ -207,7 +212,7 @@ Page({
       yAxis: {
         min: 0
       },
-      width: 380,
+      width: 350,
       height: 225
     });
   },

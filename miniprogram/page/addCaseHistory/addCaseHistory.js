@@ -1,4 +1,3 @@
-
 const database = wx.cloud.database()
 Page({
 
@@ -10,8 +9,7 @@ Page({
   },
 
   onLoad(options) {
-    console.log(options, 'ss');
-    if (options._id) {
+    if (options?._id) {
       this.setData({
         dataItem: options
       })
@@ -20,7 +18,7 @@ Page({
   },
 
   init() {
-    database.collection('medical-history-sheet').doc(this.data.dataItem._id).get().then(res => {
+    database.collection('medical-history-sheet').doc(this.data.dataItem?._id).get().then(res => {
       if (res.errMsg !== "document.get:ok") return;
       this.setData({
         dataItem: res.data,
@@ -48,7 +46,7 @@ Page({
       submitting: true
     })
     if (this.data.dataItem?._id) {
-      database.collection('medical-history-sheet').doc(this.data.dataItem._id).update({
+      database.collection('medical-history-sheet').doc(this.data.dataItem?._id).update({
         data: {
           ...this.data.formData,
           imgUrl: this.data.imgUrl,
@@ -106,6 +104,13 @@ Page({
   handleDeleteDate() {
     this.setData({
       date: ''
+    })
+  },
+  handleDeleteImg(e) {
+    const index = e.currentTarget.dataset.index
+    this.data.imgUrl.splice(index, 1)
+    this.setData({
+      imgUrl: this.data.imgUrl
     })
   },
   handleUpload() {

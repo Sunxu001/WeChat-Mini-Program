@@ -14,11 +14,14 @@
     <view class="section__upload">
       <text class="section__title">附件（病历照片）：</text>
       <view class="section__upload__box" bindtap="handleUpload">
-        <image src="../../image/add_photo.png" mode="widthFix"/>
+        <image src="../../image/add_photo.png" mode="widthFix" />
       </view>
       <view class="section__image">
         <view wx:for="{{imgUrl}}" wx:key="index">
-          <image src="{{item}}" />
+          <view style="position: relative;">
+            <image src="{{item}}" />
+            <text bindtap="handleDeleteImg" data-index="{{index}}" style="position: absolute;top: -15rpx;right: -4rpx;">x</text>
+          </view>
         </view>
       </view>
     </view>

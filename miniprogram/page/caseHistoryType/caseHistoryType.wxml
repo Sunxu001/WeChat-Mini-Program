@@ -18,7 +18,7 @@
           <text style="font-size: 50rpx;">
             <text wx:if="{{dataType == '血压'}}">高压</text>{{meanValue}}</text>
         </view>
-        <text style="font-size: 30rpx;">{{echartOptions.date[1]}}月{{echartOptions.date[2]}}日</text>
+        <text style="font-size: 30rpx;">{{scopeDate}}</text>
       </view>
       <view style="margin-top: 10rpx;" wx:if="{{dataType == '血压'}}">
         <text style="font-size: 50rpx;" wx:if="{{lowTension}}">低压{{lowTension}}</text>

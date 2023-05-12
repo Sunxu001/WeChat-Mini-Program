@@ -90,17 +90,17 @@ Page({
         this.setData({
           avatarUrl: res.userInfo.avatarUrl
         })
-        console.log(res, 'res');
         database.collection('userInfo').add({
           data: {
             avatarUrl: res.userInfo.avatarUrl,
             nickName: res.userInfo.nickName,
           }
-        }).then(res=>{
+        }).then(()=>{
           wx.showToast({
             icon: 'success',
             title: '登录成功',
           })
+          this.init()
         })
       }
     })
